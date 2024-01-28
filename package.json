@@ -1,0 +1,15 @@
+{
+  "name": "com-tomorrow",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev & lsof -ti :4321 | xargs kill -9 & /Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome http://localhost:4321",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^4.2.6"
+  }
+}
