@@ -1,0 +1,74 @@
+---
+const text = [
+  "Hu Yixi",
+  "Developer",
+  "Engineer",
+  "Designer",
+  "Thinker",
+  "Learner",
+  "Innovator",
+  "Reader",
+  "Bloger",
+  "Frontend Developer",
+  "Hu Yixi",
+  "Developer",
+  "Engineer",
+  "Designer",
+  "Thinker",
+  "Learner",
+  "Innovator",
+  "Reader",
+  "Bloger",
+  "Frontend Developer",
+];
+---
+
+<div class="home-scroller w-screen h-screen fixed top-0 left-0">
+  <h2
+    class="absolute top-[calc(50vh-1.35vw)] left-[34%] font-size-[2.7vw] font-200"
+  >
+    Hu Yixi
+  </h2>
+  <div class="scroll-wrapper relative h-100% left-45% overflow-hidden">
+    <div class="mask absolute z-2 w-full top-0"></div>
+    <div class="mask absolute z-2 w-full bottom-0"></div>
+    <ul class="text-list absolute top-0 left-0 h-auto">
+      {
+        text.map((item) => (
+          <li class="font-size-[2.7vw] line-height-none font-200">{item}</li>
+        ))
+      }
+      {
+        text.map((item) => (
+          <li class="font-size-[2.7vw] line-height-none font-200">{item}</li>
+        ))
+      }
+      {
+        text.map((item) => (
+          <li class="font-size-[2.7vw] line-height-none font-200">{item}</li>
+        ))
+      }{
+        text.map((item) => (
+          <li class="font-size-[2.7vw] line-height-none font-200">{item}</li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<style lang="stylus">
+.home-scroller
+  font-family Reckless Neue,serif
+
+  @keyframes loop
+    0%
+      transform translateY(0)
+    100%
+      transform translateY(-25%)
+  .scroll-wrapper
+    .text-list
+      animation 30s linear loop infinite
+    .mask
+      height calc(50vh - 1.35vw)
+      background-color rgba(255, 255, 255, 0.90)
+</style>
