@@ -1,10 +1,35 @@
 <nav class="h-[calc(100vh-4rem)] z-10 fixed">
   <ul class="relative h-100%">
-    <li class="border-t border-black text-left w-32 mb-2 font-size-sm cursor-pointer">About
+    <li id="nav-about" class="border-t border-black text-left w-32 mb-2 font-size-sm cursor-pointer">About
     </li>
-    <li class="border-t border-black text-left w-32 font-size-sm cursor-pointer">Projects</li>
-    <li class="absolute bottom-0 border-t border-black text-left w-32 font-size-sm cursor-pointer">
+    <li id="nav-projects" class="border-t border-black text-left w-32 font-size-sm cursor-pointer">Projects</li>
+    <li id="nav-contact" class="absolute bottom-0 border-t border-black text-left w-32 font-size-sm cursor-pointer">
       Contact
     </li>
   </ul>
 </nav>
+
+<script>
+import { isContactOpen, isAboutOpen, isProjectOpen } from '../store.js';
+
+function toggleState(store) {
+  store.set(!store.get());
+}
+
+function toggleContact() {
+  toggleState(isContactOpen);
+}
+
+function toggleAbout() {
+  toggleState(isAboutOpen);
+}
+
+function toggleProject() {
+  toggleState(isProjectOpen);
+}
+
+document.getElementById('nav-contact').addEventListener('click', toggleContact);
+document.getElementById('nav-projects').addEventListener('click', toggleProject);
+document.getElementById('nav-about').addEventListener('click', toggleAbout);
+
+</script>

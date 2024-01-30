@@ -1,0 +1,11 @@
+<section id="nav-panel-contact" style="display:none">contact</section>
+<script>
+  import { isContactOpen } from "../store";
+  isContactOpen.subscribe((open) => {
+    if (open) {
+      document.getElementById("nav-panel-contact").style.display = "block";
+    } else {
+      document.getElementById("nav-panel-contact").style.display = "none";
+    }
+  });
+</script>

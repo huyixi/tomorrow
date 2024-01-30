@@ -24,7 +24,7 @@ const projects = [
 ];
 ---
 
-<section class="ml-48 mt-8">
+<section id="nav-panel-project" style="display: none;" class="ml-48 mt-8">
   <ul class="">
     {
       projects.map((item, index) => (
@@ -44,3 +44,13 @@ const projects = [
     }
   </ul>
 </section>
+<script>
+  import { isProjectOpen } from "../store";
+  isProjectOpen.subscribe((open) => {
+    if (open) {
+      document.getElementById("nav-panel-project").style.display = "block";
+    } else {
+      document.getElementById("nav-panel-project").style.display = "none";
+    }
+  });
+</script>

@@ -1,0 +1,11 @@
+<section id="nav-panel-about" style="display:none">About</section>
+<script>
+  import { isAboutOpen } from "../store";
+  isAboutOpen.subscribe((open) => {
+    if (open) {
+      document.getElementById("nav-panel-about").style.display = "block";
+    } else {
+      document.getElementById("nav-panel-about").style.display = "none";
+    }
+  });
+</script>
