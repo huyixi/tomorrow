@@ -1,0 +1,15 @@
+---
+import {atom} from 'nanostores'
+import Nav from "../components/Nav.astro";
+import ProjectMenu from "../components/ProjectMenu.astro";
+export const isOpen = atom(false)
+---
+
+<section class="z-10">
+  <Nav />
+  <ProjectMenu />
+</section>
+<style lang="stylus">
+  section
+    font-weight 200
+</style>

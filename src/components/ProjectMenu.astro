@@ -1,0 +1,46 @@
+---
+const projects = [
+  {
+    name: "v1",
+    desc: "My first website",
+    link: "https://v1.huyixi.com",
+    pic: "",
+    time: "2023",
+  },
+  {
+    name: "Blog",
+    desc: "My blog",
+    link: "https://huyixi.org",
+    pic: "",
+    time: "2024",
+  },
+  {
+    name: "wiki",
+    desc: "My wiki",
+    link: "https://huyixi.wiki",
+    pic: "",
+    time: "2023",
+  },
+];
+---
+
+<section class="ml-48 mt-8">
+  <ul class="">
+    {
+      projects.map((item, index) => (
+        <li
+          class={`cursor-pointer ${
+            index === 0
+              ? "border-t border-black"
+              : "border-t border-transparent"
+          } w-32 flex hover:border-black`}
+        >
+          <div>{index.toString().padStart(2, "0")}</div>
+          <div>{item.name}</div>
+          <div>{item.time}</div>
+          <figure />
+        </li>
+      ))
+    }
+  </ul>
+</section>
