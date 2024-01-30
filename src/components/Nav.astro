@@ -10,7 +10,7 @@
 </nav>
 
 <script>
-import { isContactOpen, isAboutOpen, isProjectOpen } from '../store.js';
+import { isContactOpen, isAboutOpen, isProjectOpen,isShadowOpen } from '../store.js';
 
 function toggleState(store) {
   store.set(!store.get());
@@ -18,14 +18,17 @@ function toggleState(store) {
 
 function toggleContact() {
   toggleState(isContactOpen);
+  toggleState(isShadowOpen);
 }
 
 function toggleAbout() {
   toggleState(isAboutOpen);
+  toggleState(isShadowOpen);
 }
 
 function toggleProject() {
   toggleState(isProjectOpen);
+  toggleState(isShadowOpen);
 }
 
 document.getElementById('nav-contact').addEventListener('click', toggleContact);
