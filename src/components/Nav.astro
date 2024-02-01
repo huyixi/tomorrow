@@ -30,16 +30,26 @@
   } from "../store.js";
 
   function toggleMenu(store, symbolId) {
-    console.log("toggleMenu", store, symbolId);
-    [isContactOpen, isAboutOpen, isProjectOpen].forEach(
-      (otherStore) => {
-        if (otherStore !== store) otherStore.set(false);
-      },
-    );
+    [isContactOpen, isAboutOpen, isProjectOpen].forEach((otherStore) => {
+      if (otherStore !== store) otherStore.set(false);
+    });
 
+    [
+      "nav-item-symbol-contact",
+      "nav-item-symbol-about",
+      "nav-item-symbol-projects",
+    ].forEach((otherSymbolId) => {
+      document.getElementById(otherSymbolId).textContent = "+";
+    });
     store.set(!store.get());
     const symbolElement = document.getElementById(symbolId);
     symbolElement.textContent = store.get() ? "-" : "+";
+
+    if (isContactOpen.get() || isAboutOpen.get() || isProjectOpen.get()) {
+      isShadowOpen.set(true);
+    } else {
+      isShadowOpen.set(false);
+    }
   }
 
   document
