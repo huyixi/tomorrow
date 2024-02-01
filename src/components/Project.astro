@@ -1,45 +1,46 @@
 ---
 const projects = [
   {
-    name: "v1",
-    desc: "My first website",
+    name: "My first Blog - Blue",
+    desc: "Inspired by https://leerob.io/",
     url: "https://v1.huyixi.com",
-    image: proj1,
+    image: v1,
     time: "2023",
   },
   {
-    name: "Blog",
-    desc: "My blog",
+    name: "Web2Book",
+    desc: "A tool to convert web page to ebook",
+    url: "https://github.com/huyixi/web2book",
+    image: "",
+    time: "2023",
+  },
+  {
+    name: "Personal Wiki",
+    desc: "My wiki",
+    url: "https://huyixi.wiki",
+    image: wiki,
+    time: "2023",
+  },
+  {
+    name: "My Second Blog - White",
+    desc: "My wiki",
     url: "https://huyixi.org",
-    image: proj2,
+    image: v2,
     time: "2024",
   },
   {
-    name: "Wiki",
-    desc: "My wiki",
-    url: "https://huyixi.wiki",
-    image: proj3,
-    time: "2023",
-  },
-  {
-    name: "wiki",
-    desc: "My wiki",
-    url: "https://huyixi.wiki",
-    image: proj2,
-    time: "2023",
-  },
-  {
-    name: "wiki",
-    desc: "My wiki",
-    url: "https://huyixi.wiki",
-    image: proj1,
-    time: "2023",
+    name: "Personal Website",
+    desc: "Inspired by Tomorrow Happens",
+    url: "https://huyixi.com",
+    image: tomorrwo,
+    time: "2024",
   },
 ];
 import { Image } from "astro:assets";
-import proj1 from "../assets/1.png";
-import proj2 from "../assets/2.png";
-import proj3 from "../assets/3.png";
+import v1 from "../assets/v1.png";
+import v2 from "../assets/v2.png";
+import wiki from "../assets/wiki.png";
+import tomorrwo from "../assets/tomorrow.png";
 ---
 
 <section
@@ -61,12 +62,12 @@ import proj3 from "../assets/3.png";
             </div>
             <div class="project-item-title col-span-5">{item.name}</div>
             <div class="project-item-url">
-              <a href={item.url}>Live ↗</a>
+              <a href={item.url} target="_blank">Live ↗</a>
             </div>
             <div class="project-item-year">{item.time}</div>
           </div>
           <div class="project-item-desc absolute left-100% top-0 w-350px h-360px opacity-0 group-hover:opacity-100">
-            <Image src={item.image} alt={item.name} />
+            {item.image && <Image src={item.image} alt={item.name} />}
             <div>{item.desc}</div>
           </div>
         </li>
