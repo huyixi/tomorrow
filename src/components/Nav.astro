@@ -10,7 +10,7 @@
       id="nav-projects"
       class="border-t border-black text-left w-32 font-size-sm cursor-pointer"
     >
-      Projects <span id="nav-item-symbol-projects">+</span>
+      Work Index <span id="nav-item-symbol-projects">+</span>
     </li>
     <li
       id="nav-contact"
@@ -30,7 +30,8 @@
   } from "../store.js";
 
   function toggleMenu(store, symbolId) {
-    [isContactOpen, isAboutOpen, isProjectOpen, isShadowOpen].forEach(
+    console.log("toggleMenu", store, symbolId);
+    [isContactOpen, isAboutOpen, isProjectOpen].forEach(
       (otherStore) => {
         if (otherStore !== store) otherStore.set(false);
       },

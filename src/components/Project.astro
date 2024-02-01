@@ -3,42 +3,72 @@ const projects = [
   {
     name: "v1",
     desc: "My first website",
-    link: "https://v1.huyixi.com",
-    pic: "",
+    url: "https://v1.huyixi.com",
+    image: proj1,
     time: "2023",
   },
   {
     name: "Blog",
     desc: "My blog",
-    link: "https://huyixi.org",
-    pic: "",
+    url: "https://huyixi.org",
+    image: proj2,
     time: "2024",
+  },
+  {
+    name: "Wiki",
+    desc: "My wiki",
+    url: "https://huyixi.wiki",
+    image: proj3,
+    time: "2023",
   },
   {
     name: "wiki",
     desc: "My wiki",
-    link: "https://huyixi.wiki",
-    pic: "",
+    url: "https://huyixi.wiki",
+    image: proj2,
+    time: "2023",
+  },
+  {
+    name: "wiki",
+    desc: "My wiki",
+    url: "https://huyixi.wiki",
+    image: proj1,
     time: "2023",
   },
 ];
+import { Image } from "astro:assets";
+import proj1 from "../assets/1.png";
+import proj2 from "../assets/2.png";
+import proj3 from "../assets/3.png";
 ---
 
-<section id="nav-panel-project" style="display: none;" class="ml-48 mt-8">
-  <ul class="">
+<section
+  id="nav-panel-project"
+  style="display: none;"
+  class="flex flex-row mt-8"
+>
+  <ul class="border-t border-black">
     {
       projects.map((item, index) => (
-        <li
-          class={`cursor-pointer ${
-            index === 0
-              ? "border-t border-black"
-              : "border-t border-transparent"
-          } w-32 flex hover:border-black`}
-        >
-          <div>{index.toString().padStart(2, "0")}</div>
-          <div>{item.name}</div>
-          <div>{item.time}</div>
-          <figure />
+        <li class="relative group">
+          <div
+            class={`project-menu-item grid grid-cols-8 gap-px cursor-pointer hover:border-black w-36vw ${
+              index === 0 ? "" : "border-t border-transparent "
+            } `}
+          >
+            <div class="project-item-index">
+              {index.toString().padStart(2, "0")}
+            </div>
+            <div class="project-item-title col-span-5">{item.name}</div>
+            <div class="project-item-url">
+              <a href={item.url}>Live ↗</a>
+            </div>
+            <div class="project-item-year">{item.time}</div>
+          </div>
+          <div class="project-item-desc absolute left-100% top-0 w-350px h-360px opacity-0 group-hover:opacity-100">
+            <Image src={item.image} alt={item.name} />
+            <div>{item.desc}</div>
+          </div>
         </li>
       ))
     }
