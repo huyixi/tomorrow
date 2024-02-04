@@ -48,12 +48,12 @@ import tomorrwo from "../assets/tomorrow.png";
   style="display: none;"
   class="flex flex-row mt-8"
 >
-  <ul class="border-t border-black">
+  <ul class="border-t border-[rgb(0,0,0,.3)]">
     {
       projects.map((item, index) => (
         <li class="relative group">
           <div
-            class={`project-menu-item grid grid-cols-8 gap-px cursor-pointer hover:border-black w-36vw ${
+            class={`project-menu-item grid grid-cols-8 gap-px cursor-pointer hover:border-[rgb(0,0,0,.3)] w-36vw ${
               index === 0 ? "" : "border-t border-transparent "
             } `}
           >

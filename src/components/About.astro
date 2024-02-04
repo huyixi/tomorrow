@@ -1,4 +1,48 @@
-<section id="nav-panel-about" style="display:none">About</section>
+---
+import { Image } from "astro:assets";
+import person from "../assets/person.png";
+---
+
+<section id="nav-panel-about" style="display:none">
+  <ul class="grid gap-4">
+    <li>
+      <div class="content w-64 border-t border-[rgb(0,0,0,.3)]">
+        <p>
+          HuYixi is a engineer,bblablablabla blablablabla blablablabla
+          lablablabla
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="w-64 border-t border-[rgb(0,0,0,.3)]">
+        <p>Personal Site</p>
+        <p class="indent">
+          <a class="hover:underline" href="https://github.com/huyixi"
+            >huyixi.com</a
+          >
+          <p class="indent">
+            <a class="hover:underline" href="https://huyixi.org">Blog</a>
+          </p>
+          <p class="indent">
+            <a class="hover:underline" href="https://huyixi.wiki">Wiki</a>
+          </p>
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="w-64 border-t border-[rgb(0,0,0,.3)]">
+        <p>Tech Stack</p>
+        <p class="indent">
+          <p class="indent"></p>
+          <p class="indent"></p>
+        </p>
+      </div>
+    </li>
+  </ul>
+  <div class="absolute top-2rem right-2rem w-350px h-360px">
+    <Image src={person} alt="me"/>
+  </div>
+</section>
 <script>
   import { isAboutOpen } from "../store";
   isAboutOpen.subscribe((open) => {
