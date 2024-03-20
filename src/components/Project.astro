@@ -23,7 +23,7 @@ const projects = [
   },
   {
     name: "My Second Blog - White",
-    desc: "My wiki",
+    desc: "My Second Personal Blog",
     url: "https://huyixi.org",
     image: v2,
     time: "2024",
@@ -65,7 +65,7 @@ import onlyBlack from "../assets/only-black.png";
             } `}
           >
             <div class="project-item-index">
-              {index.toString().padStart(2, "0")}
+              {(index+1).toString().padStart(2, "0")}
             </div>
             <div class="project-item-title col-span-5">{item.name}</div>
             <div class="project-item-url">
